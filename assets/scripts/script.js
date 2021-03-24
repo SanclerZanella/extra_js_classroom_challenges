@@ -63,7 +63,7 @@ function max(num1, num2) {
 }
 
 ///Challenge 3 new_max function
-//receive three numbers passed as parameter and return the the largest number
+//receive three numbers passed as parameter and return the largest number
 
 let firstNum = document.getElementById("numOne");
 let secondNum = document.getElementById("numTwo");
@@ -93,5 +93,29 @@ function new_max(valueOne, valueTwo, valueThree) {
     } else if((valueOne === valueTwo) && (valueTwo === valueThree)) {
         console.log("These numbers are equal");
         cThreeAnswer.innerHTML = "These numbers are equal";
+    }
+}
+
+///Challenge 4 is_vowel(letter) function
+//receive a letter passed as parameter and return the if is a vowel or not.
+let vowelInput = document.getElementById('vowelInput');
+let vowelAnswer = document.getElementById('vowelAnswer');
+
+vowelAnswer.addEventListener('click', function() {
+    let vInputValue = vowelInput.value;
+
+    is_vowel(vInputValue);
+})
+
+function is_vowel(letter){
+    let vowelPrint = document.getElementById('challengeFourResult');
+    let vowels = ["A", "a", "E", "e", "I", "i", "O", "o", "U", "u"];
+
+    if(vowels.includes(letter)) {
+        console.log(`${letter} is a vowel.`);
+        vowelPrint.innerHTML = `${letter} is a vowel.`;
+    } else {
+        console.log(`${letter} is not a vowel.`);
+        vowelPrint.innerHTML = `${letter} is not a vowel.`;
     }
 }
