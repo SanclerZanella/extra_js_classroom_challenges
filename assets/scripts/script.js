@@ -70,7 +70,7 @@ let secondNum = document.getElementById("numTwo");
 let thirdNum = document.getElementById("numThree");
 let buttonThree = document.getElementById("maxAnswer");
 
-buttonThree.addEventListener('click', function() {
+buttonThree.addEventListener('click', function () {
     let valueOne = Number(firstNum.value);
     let valueTwo = Number(secondNum.value);
     let valueThree = Number(thirdNum.value);
@@ -81,16 +81,16 @@ buttonThree.addEventListener('click', function() {
 function new_max(valueOne, valueTwo, valueThree) {
     let cThreeAnswer = document.getElementById("challengeThreeResult");
 
-    if((valueOne > valueTwo) && (valueOne > valueThree)) {
+    if ((valueOne > valueTwo) && (valueOne > valueThree)) {
         console.log(`The largest number is ${valueOne}`);
         cThreeAnswer.innerHTML = `The largest number is ${valueOne}`;
-    } else if((valueTwo > valueOne) && (valueTwo > valueThree)) {
+    } else if ((valueTwo > valueOne) && (valueTwo > valueThree)) {
         console.log(`The largest number is ${valueTwo}`);
         cThreeAnswer.innerHTML = `The largest number is ${valueTwo}`;
-    } else if((valueThree > valueOne) && (valueThree > valueTwo)) {
+    } else if ((valueThree > valueOne) && (valueThree > valueTwo)) {
         console.log(`The largest number is ${valueThree}`);
         cThreeAnswer.innerHTML = `The largest number is ${valueThree}`;
-    } else if((valueOne === valueTwo) && (valueTwo === valueThree)) {
+    } else if ((valueOne === valueTwo) && (valueTwo === valueThree)) {
         console.log("These numbers are equal");
         cThreeAnswer.innerHTML = "These numbers are equal";
     }
@@ -98,20 +98,21 @@ function new_max(valueOne, valueTwo, valueThree) {
 
 ///Challenge 4 is_vowel(letter) function
 //receive a letter passed as parameter and return the if is a vowel or not.
+
 let vowelInput = document.getElementById('vowelInput');
 let vowelAnswer = document.getElementById('vowelAnswer');
 
-vowelAnswer.addEventListener('click', function() {
+vowelAnswer.addEventListener('click', function () {
     let vInputValue = vowelInput.value;
 
     is_vowel(vInputValue);
 })
 
-function is_vowel(letter){
+function is_vowel(letter) {
     let vowelPrint = document.getElementById('challengeFourResult');
     let vowels = ["A", "a", "E", "e", "I", "i", "O", "o", "U", "u"];
 
-    if(vowels.includes(letter)) {
+    if (vowels.includes(letter)) {
         console.log(`${letter} is a vowel.`);
         vowelPrint.innerHTML = `${letter} is a vowel.`;
     } else {
@@ -119,3 +120,35 @@ function is_vowel(letter){
         vowelPrint.innerHTML = `${letter} is not a vowel.`;
     }
 }
+
+///Challenge 5 checkArray array
+//Split an array of strings 
+//verify if the words in a specific index is inside another array, 
+//if not than push the word to the end.
+
+let checkArrayAnswer = document.getElementById("checkArrayAnswer");
+
+checkArrayAnswer.addEventListener("click", function () {
+    let challengeFiveResult = document.getElementById("challengeFiveResult");
+
+    let myString = "Oh what a beautiful morning";
+    let myArray = myString.split(" ");
+    let checkArray = [];
+
+    for (let i = 0; i <= checkArray.length; i++) {
+        let item = checkArray.indexOf(myArray[i]);
+
+        if (item === -1) {
+            checkArray.push(myArray[i]);
+        }
+    }
+    checkArray.splice(5, 1);
+
+    console.log(checkArray);
+    challengeFiveResult.innerHTML = `myString = "Oh what a beautiful morning";<br><br>
+                                     checkArray = [${checkArray}];`;
+})
+
+
+
+
