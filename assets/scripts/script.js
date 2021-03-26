@@ -135,11 +135,11 @@ checkArrayAnswer.addEventListener("click", function () {
     let myArray = myString.split(" ");
     let checkArray = [];
 
-    for (let i = 0; i <= checkArray.length; i++) {
-        let item = checkArray.indexOf(myArray[i]);
+    for (let i of checkArray) {
+        let item = checkArray.indexOf(i);
 
         if (item === -1) {
-            checkArray.push(myArray[i]);
+            checkArray.push(i);
         }
     }
     checkArray.splice(5, 1);
@@ -148,6 +148,29 @@ checkArrayAnswer.addEventListener("click", function () {
     challengeFiveResult.innerHTML = `myString = "Oh what a beautiful morning";<br><br>
                                      checkArray = [${checkArray}];`;
 })
+
+///Challenge 6 studentsBackwards array
+//Iterate over the students array backwards,  
+//and push each name onto the studentsBackwards array.
+
+let studentsAnswer = document.getElementById("studentsAnswer");
+
+studentsAnswer.addEventListener("click", function () {
+    let challengeSixResult = document.getElementById("challengeSixResult");
+
+    let students = ["Alex", "Babu", "Brian", "Cormac", "Caoimhe", "Donal", "Femy", "Jean", "Katie", "Kira", "Neal", "Zanbo", "Zoran"];
+
+    let studentsBackwards = [];
+
+    for (let x = students.length - 1; x >= 0; x--) {
+        studentsBackwards.push(students[x]);
+    }
+
+    console.log(studentsBackwards);
+    challengeSixResult.innerHTML = `students = ["Alex", "Babu", "Brian", "Cormac", "Caoimhe", "Donal", "Femy", "Jean", "Katie", "Kira", "Neal", "Zanbo", "Zoran"];<br><br>
+                                     studentsBackwards = [${studentsBackwards}];`;
+})
+
 
 
 
