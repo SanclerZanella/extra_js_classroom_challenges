@@ -166,9 +166,12 @@ studentsAnswer.addEventListener("click", function () {
         studentsBackwards.push(students[x]);
     }
 
+    for (let i of studentsBackwards) {
+        let studentsNames = console.log(i);
+
+        challengeSixResult.innerHTML += `${i}<br>`;
+    }
     console.log(studentsBackwards);
-    challengeSixResult.innerHTML = `students = ["Alex", "Babu", "Brian", "Cormac", "Caoimhe", "Donal", "Femy", "Jean", "Katie", "Kira", "Neal", "Zanbo", "Zoran"];<br><br>
-                                     studentsBackwards = [${studentsBackwards}];`;
 })
 
 
