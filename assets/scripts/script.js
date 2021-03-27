@@ -126,20 +126,20 @@ function is_vowel(letter) {
 //verify if the words in a specific index is inside another array, 
 //if not than push the word to the end.
 
-let checkArrayAnswer = document.getElementById("checkArrayAnswer");
+let checkArrayAnswerButton = document.getElementById("checkArrayAnswer");
 
-checkArrayAnswer.addEventListener("click", function () {
+checkArrayAnswerButton.addEventListener("click", function () {
     let challengeFiveResult = document.getElementById("challengeFiveResult");
 
     let myString = "Oh what a beautiful morning";
     let myArray = myString.split(" ");
     let checkArray = [];
 
-    for (let i of checkArray) {
-        let item = checkArray.indexOf(i);
+    for (let i = 0; i <= checkArray.length; i++) {
+        let item = checkArray.indexOf(myArray[i]);
 
         if (item === -1) {
-            checkArray.push(i);
+            checkArray.push(myArray[i]);
         }
     }
     checkArray.splice(5, 1);
@@ -173,6 +173,32 @@ studentsAnswer.addEventListener("click", function () {
     }
     console.log(studentsBackwards);
 })
+
+///Challenge 7 wordsArray array
+//Iterate over the wordsArray,  
+//and use .indexOf to find a word in your array, and print that word to screen.
+
+let arrayWordAnswerButton = document.getElementById("arrayWordAnswer");
+
+arrayWordAnswerButton.addEventListener("click", function () {
+    let challengeSevenResult = document.getElementById("challengeSevenResult");
+    let secondChallengeSevenResult = document.getElementById("secondChallengeSevenResult");
+
+    let wordsArray = ["Eriador", "Mordor", "Gondor", "Rohan", "Rhovanion"];
+
+    for (let i in wordsArray) {
+        let middleEarthPlaces = wordsArray[i];
+        // let chosenPlace = wordsArray[wordsArray.indexOf("Gondor")];
+
+        console.log(`index ${i} is ${middleEarthPlaces}`);
+        challengeSevenResult.innerHTML += `Index ${i} is ${middleEarthPlaces}<br>`
+    }
+
+    secondChallengeSevenResult.innerHTML = `<br>The chosen place is ${wordsArray[wordsArray.indexOf("Gondor")]}`;
+})
+
+
+
 
 
 
