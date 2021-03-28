@@ -188,7 +188,6 @@ arrayWordAnswerButton.addEventListener("click", function () {
 
     for (let i in wordsArray) {
         let middleEarthPlaces = wordsArray[i];
-        // let chosenPlace = wordsArray[wordsArray.indexOf("Gondor")];
 
         console.log(`index ${i} is ${middleEarthPlaces}`);
         challengeSevenResult.innerHTML += `Index ${i} is ${middleEarthPlaces}<br>`
@@ -196,6 +195,43 @@ arrayWordAnswerButton.addEventListener("click", function () {
 
     secondChallengeSevenResult.innerHTML = `<br>The chosen place is ${wordsArray[wordsArray.indexOf("Gondor")]}`;
 })
+
+///Challenge 8 wordsArray array
+//Create a function called largestNumber that takes one argument called numberArray.
+//When an array is passed in, the function should return the largest number in the array.  
+
+//Challenge 8 first solution:
+
+// let numArray = [1,7,8,3,12,2];
+
+// function largestNumber(numberArray) {
+//     let largestNum = Math.max(...numberArray)
+//     console.log(largestNum);
+// }
+
+// largestNumber(numArray);
+
+//Challenge 8 second solution:
+
+let largestNumberAnswerButton = document.getElementById("largestNumberAnswer");
+let numArray = [1,7,8,3,12,2];
+
+largestNumberAnswerButton.addEventListener("click", function() {
+    let challengeEightResult = document.getElementById("challengeEightResult");
+    let largestNum = 0;
+    
+    for(let i of numArray) {
+        if(i > largestNum) {
+            largestNum = i;
+        }
+    }
+
+    console.log(largestNum);
+    challengeEightResult.innerHTML = largestNum;
+});
+
+
+
 
 
 
