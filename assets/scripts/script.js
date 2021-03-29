@@ -230,6 +230,28 @@ largestNumberAnswerButton.addEventListener("click", function() {
     challengeEightResult.innerHTML = largestNum;
 });
 
+///Challenge 9 wordsArray array
+//Write a JavaScript function called sumArray that returns the sum of numbers in an array.
+
+let sumArrayAnswerButton = document.getElementById("sumArrayAnswer");
+let valuesArray = [1,3,5,7];
+
+sumArrayAnswerButton.addEventListener("click", sumArrayResult)
+
+function sumArray(total, num) {
+    return total + num;
+}
+
+function sumArrayResult() {
+    let challengeNineResult = document.getElementById("challengeNineResult");
+    let sumResult = valuesArray.reduce(sumArray);
+    
+    console.log(sumResult);
+    challengeNineResult.innerHTML = `The result is ${sumResult}`;
+}
+
+
+
 
 
 
