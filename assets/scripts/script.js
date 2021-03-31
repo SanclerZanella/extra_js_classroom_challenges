@@ -196,7 +196,7 @@ arrayWordAnswerButton.addEventListener("click", function () {
     secondChallengeSevenResult.innerHTML = `<br>The chosen place is ${wordsArray[wordsArray.indexOf("Gondor")]}`;
 })
 
-///Challenge 8 wordsArray array
+///Challenge 8 numArray array
 //Create a function called largestNumber that takes one argument called numberArray.
 //When an array is passed in, the function should return the largest number in the array.  
 
@@ -230,7 +230,7 @@ largestNumberAnswerButton.addEventListener("click", function() {
     challengeEightResult.innerHTML = largestNum;
 });
 
-///Challenge 9 wordsArray array
+///Challenge 9 sumArray function
 //Write a JavaScript function called sumArray that returns the sum of numbers in an array.
 
 let sumArrayAnswerButton = document.getElementById("sumArrayAnswer");
@@ -249,6 +249,31 @@ function sumArrayResult() {
     console.log(sumResult);
     challengeNineResult.innerHTML = `The result is ${sumResult}`;
 }
+
+///Challenge 10 pushZeroes function
+//Your aim is to return a string with the zeroes pushed to the end, so calling pushZeroes("30041203") will return "34123000".
+
+let numString = "30041203";
+let pushZeroesAnswerButton = document.getElementById("pushZeroesAnswer");
+
+pushZeroesAnswerButton.addEventListener("click", pushZeroes(numString));
+
+function pushZeroes(input) {
+    let challengeTenResult = document.getElementById("challengeTenResult");
+    let zeroes = "";
+    let nonZeroes = "";
+
+    for(let i of input) {
+        i === "0" ? zeroes += i : nonZeroes += i;
+    };
+
+    let lastZeroesResult = nonZeroes.concat(zeroes);
+
+    console.log(lastZeroesResult);
+    challengeTenResult.innerHTML = lastZeroesResult;
+}
+
+
 
 
 
