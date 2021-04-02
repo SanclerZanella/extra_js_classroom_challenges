@@ -214,14 +214,14 @@ arrayWordAnswerButton.addEventListener("click", function () {
 //Challenge 8 second solution:
 
 let largestNumberAnswerButton = document.getElementById("largestNumberAnswer");
-let numArray = [1,7,8,3,12,2];
+let numArray = [1, 7, 8, 3, 12, 2];
 
-largestNumberAnswerButton.addEventListener("click", function() {
+largestNumberAnswerButton.addEventListener("click", function () {
     let challengeEightResult = document.getElementById("challengeEightResult");
     let largestNum = 0;
-    
-    for(let i of numArray) {
-        if(i > largestNum) {
+
+    for (let i of numArray) {
+        if (i > largestNum) {
             largestNum = i;
         }
     }
@@ -234,7 +234,7 @@ largestNumberAnswerButton.addEventListener("click", function() {
 //Write a JavaScript function called sumArray that returns the sum of numbers in an array.
 
 let sumArrayAnswerButton = document.getElementById("sumArrayAnswer");
-let valuesArray = [1,3,5,7];
+let valuesArray = [1, 3, 5, 7];
 
 sumArrayAnswerButton.addEventListener("click", sumArrayResult)
 
@@ -245,25 +245,27 @@ function sumArray(total, num) {
 function sumArrayResult() {
     let challengeNineResult = document.getElementById("challengeNineResult");
     let sumResult = valuesArray.reduce(sumArray);
-    
+
     console.log(sumResult);
     challengeNineResult.innerHTML = `The result is ${sumResult}`;
 }
 
 ///Challenge 10 pushZeroes function
-//Your aim is to return a string with the zeroes pushed to the end, so calling pushZeroes("30041203") will return "34123000".
+//The aim is to return a string with the zeroes pushed to the end, so calling pushZeroes("30041203") will return "34123000".
 
 let numString = "30041203";
 let pushZeroesAnswerButton = document.getElementById("pushZeroesAnswer");
 
-pushZeroesAnswerButton.addEventListener("click", pushZeroes(numString));
+pushZeroesAnswerButton.addEventListener("click", function () {
+    pushZeroes(numString);
+});
 
 function pushZeroes(input) {
     let challengeTenResult = document.getElementById("challengeTenResult");
     let zeroes = "";
     let nonZeroes = "";
 
-    for(let i of input) {
+    for (let i of numString) {
         i === "0" ? zeroes += i : nonZeroes += i;
     };
 
@@ -272,6 +274,40 @@ function pushZeroes(input) {
     console.log(lastZeroesResult);
     challengeTenResult.innerHTML = lastZeroesResult;
 }
+
+///Challenge 11 makeBricks function
+//Return true if it is possible to make the goal by choosing from the given bricks, and false if it is not possible.
+
+let goal_brick = document.getElementById("goal_brick");
+let small_bricks = document.getElementById("small_bricks");
+let big_bricks = document.getElementById("big_bricks");
+let makeBricksAnswerButton = document.getElementById("makeBricksAnswer");
+
+makeBricksAnswerButton.addEventListener("click", function() {
+    let goalValue = Number(goal_brick.value);
+    let smallValue = Number(small_bricks.value);
+    let bigValue = Number(big_bricks.value);
+
+    makeBricks(smallValue, bigValue, goalValue);
+});
+
+
+function makeBricks(small, big, goal) {
+    let challengeElevenResultDiv = document.getElementById("challengeElevenResult");
+    
+    let smallBricks = small * 1;
+    let bigBricks = big * 5;
+    let goalBricks = smallBricks + bigBricks;
+
+    if (goalBricks === goal) {
+        console.log(true);
+        challengeElevenResultDiv.innerHTML = true;
+    } else {
+        console.log(false);
+        challengeElevenResultDiv.innerHTML = false;
+    }
+};
+
 
 
 
