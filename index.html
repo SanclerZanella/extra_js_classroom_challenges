@@ -203,12 +203,45 @@
                 <input id="goal_brick" type="number"> <br>
                 <label for="small_bricks">Place the quantity of small bricks:</label>
                 <input id="small_bricks" type="number"> <br>
-                <label for="small_bricks">Place the quantity of big bricks:</label>
+                <label for="big_bricks">Place the quantity of big bricks:</label>
                 <input id="big_bricks" type="number"> <br>
 
                 <input id="makeBricksAnswer" type="button" value="result">
 
                 <div id="challengeElevenResult"></div>
+            </div>
+
+            <div id="challengeTwelve" class="challenges">
+                <h2>Challenge 12</h2>
+
+                <p>Create a function called cToF that accepts one argument called celsius.
+
+                    The function should return the value of celsius converted to Fahrenheit.
+
+                    The formula to convert celsius to Fahrenheit is: (celsius * 1.8) + 32
+
+                    BONUS ROUND:
+
+                    Create another function called fToC that converts Fahrenheit back to Celsius.
+
+                    BONUS BONUS ROUND:
+
+                    Combine the two functions into one called convertTemp that takes two arguments: num and unit.
+
+                    Calling: convertTemp(32,"C") will convert 32 Celsius to Fahrenheit.
+
+                    Calling convertTemp(101, "F") will convert 101 Fahrenheit to Celsius.
+                </p>
+
+                <p>Place your values:</p>
+                <label for="tempValue">Place the temperature:</label> <br>
+                <input id="tempValue" type="number"> <br>
+                <label for="tempUnit">Place the temperature unit (c for celsius | f for fahrenheit):</label> <br>
+                <input id="tempUnit" type="text" maxlength="1"> <br>
+
+                <input id="convertTempAnswer" type="button" value="result">
+
+                <div id="challengeTwelveResult"></div>
             </div>
         </div>
     </main>

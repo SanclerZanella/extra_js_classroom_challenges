@@ -308,6 +308,36 @@ function makeBricks(small, big, goal) {
     }
 };
 
+///Challenge 12 convertTemp function
+//Convert Celsius in Fahrenheit and vice-versa.
+
+let convertTempAnswerButton = document.getElementById("convertTempAnswer");
+let tempValue = document.getElementById("tempValue");
+let tempUnit = document.getElementById("tempUnit");
+
+convertTempAnswerButton.addEventListener("click", function() {
+    let tempValueNum = Number(tempValue.value);
+    let tempUnitOp = tempUnit.value;
+
+    convertTemp(tempValueNum, tempUnitOp);
+})
+
+function convertTemp(num, unit) {
+    let challengeTwelveResult = document.getElementById("challengeTwelveResult");
+
+    if(unit === "c") {
+        let resultCToF = (num * 1.8) + 32;
+
+        console.log(`${num} Celsius in Fahrenheit is ${resultCToF}`);
+        challengeTwelveResult.innerHTML = `${num} Celsius in Fahrenheit is ${resultCToF}`
+    } else if(unit === "f") {
+        let resultFToC = (num - 32) / 1.8;
+
+        console.log(`${num} Fahrenheit in Celsius is ${resultFToC}`);
+        challengeTwelveResult.innerHTML = `${num} Fahrenheit in Celsius is ${resultFToC}`
+    }
+}
+
 
 
 
