@@ -283,7 +283,7 @@ let small_bricks = document.getElementById("small_bricks");
 let big_bricks = document.getElementById("big_bricks");
 let makeBricksAnswerButton = document.getElementById("makeBricksAnswer");
 
-makeBricksAnswerButton.addEventListener("click", function() {
+makeBricksAnswerButton.addEventListener("click", function () {
     let goalValue = Number(goal_brick.value);
     let smallValue = Number(small_bricks.value);
     let bigValue = Number(big_bricks.value);
@@ -294,7 +294,7 @@ makeBricksAnswerButton.addEventListener("click", function() {
 
 function makeBricks(small, big, goal) {
     let challengeElevenResultDiv = document.getElementById("challengeElevenResult");
-    
+
     let smallBricks = small * 1;
     let bigBricks = big * 5;
     let goalBricks = smallBricks + bigBricks;
@@ -315,7 +315,7 @@ let convertTempAnswerButton = document.getElementById("convertTempAnswer");
 let tempValue = document.getElementById("tempValue");
 let tempUnit = document.getElementById("tempUnit");
 
-convertTempAnswerButton.addEventListener("click", function() {
+convertTempAnswerButton.addEventListener("click", function () {
     let tempValueNum = Number(tempValue.value);
     let tempUnitOp = tempUnit.value;
 
@@ -325,18 +325,40 @@ convertTempAnswerButton.addEventListener("click", function() {
 function convertTemp(num, unit) {
     let challengeTwelveResult = document.getElementById("challengeTwelveResult");
 
-    if(unit === "c") {
+    if (unit === "c") {
         let resultCToF = (num * 1.8) + 32;
 
         console.log(`${num} Celsius in Fahrenheit is ${resultCToF}`);
         challengeTwelveResult.innerHTML = `${num} Celsius in Fahrenheit is ${resultCToF}`
-    } else if(unit === "f") {
+    } else if (unit === "f") {
         let resultFToC = (num - 32) / 1.8;
 
         console.log(`${num} Fahrenheit in Celsius is ${resultFToC}`);
         challengeTwelveResult.innerHTML = `${num} Fahrenheit in Celsius is ${resultFToC}`
     }
 }
+
+///Challenge 13 convertTemp function
+//Write some code that prompts the user for a number. And prints out a multiplication table for that number.
+let multiTabAnswerButton = document.getElementById("multiTabAnswer");
+
+multiTabAnswerButton.addEventListener("click", function() {
+    let multValuePrompt = Number(prompt("enter a number"));
+
+    mul_table(multValuePrompt);
+})
+
+function mul_table(n) {
+    let challengeThirteenResult = document.getElementById("challengeThirteenResult");
+
+    for (let i = 0; i <= 10; i++) {
+        let table = n * i;
+
+        console.log(`${n} x ${i} = ${table}`);
+        challengeThirteenResult.innerHTML += `${n} x ${i} = ${table}<br>`;
+    }
+}
+
 
 
 
