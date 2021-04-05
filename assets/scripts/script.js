@@ -342,7 +342,7 @@ function convertTemp(num, unit) {
 //Write some code that prompts the user for a number. And prints out a multiplication table for that number.
 let multiTabAnswerButton = document.getElementById("multiTabAnswer");
 
-multiTabAnswerButton.addEventListener("click", function() {
+multiTabAnswerButton.addEventListener("click", function () {
     let multValuePrompt = Number(prompt("enter a number"));
 
     mul_table(multValuePrompt);
@@ -358,6 +358,34 @@ function mul_table(n) {
         challengeThirteenResult.innerHTML += `${n} x ${i} = ${table}<br>`;
     }
 }
+
+///Challenge 14 alertName function
+//Write a small piece of code that prompts you for your name. 
+//If the name is "Alice" then put up an alert to say "Hey, Alice!" 
+//otherwise create an alert that says "Hello " (name) ". It's nice to meet you."
+
+let nameAnswerButton = document.getElementById("nameAnswer");
+
+nameAnswerButton.addEventListener("click", function() {
+    let namePrompt = prompt("Enter your first name");
+
+    alertName(namePrompt);
+})
+
+function alertName(name) {
+    let challengeFourteenResult = document.getElementById("challengeFourteenResult");
+
+    if(name === "Alice" || name === "alice") {
+        alert("Hey, Alice!");
+        console.log("Hey, Alice!");
+        challengeFourteenResult.innerHTML = "Hey, Alice!";
+    } else {
+        alert(`Hello ${name}. It's nice to meet you.`);
+        console.log(`Hello ${name}. It's nice to meet you.`);
+        challengeFourteenResult.innerHTML = `Hello ${name}. It's nice to meet you.`;
+    }
+}
+
 
 
 
