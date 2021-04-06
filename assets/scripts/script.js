@@ -366,7 +366,7 @@ function mul_table(n) {
 
 let nameAnswerButton = document.getElementById("nameAnswer");
 
-nameAnswerButton.addEventListener("click", function() {
+nameAnswerButton.addEventListener("click", function () {
     let namePrompt = prompt("Enter your first name");
 
     alertName(namePrompt);
@@ -375,7 +375,7 @@ nameAnswerButton.addEventListener("click", function() {
 function alertName(name) {
     let challengeFourteenResult = document.getElementById("challengeFourteenResult");
 
-    if(name === "Alice" || name === "alice") {
+    if (name === "Alice" || name === "alice") {
         alert("Hey, Alice!");
         console.log("Hey, Alice!");
         challengeFourteenResult.innerHTML = "Hey, Alice!";
@@ -385,6 +385,46 @@ function alertName(name) {
         challengeFourteenResult.innerHTML = `Hello ${name}. It's nice to meet you.`;
     }
 }
+
+///Challenge 15 motorbike object
+//Create an object called motorbike. 
+//Give the object a boolean attribute of: engineStarted
+//Create a method inside the object to start the engine 
+//if it's stopped (false) or to stop the engine if it's started (true).
+
+let motorbikeAnswerButton = document.getElementById("motorbikeAnswer");
+
+motorbikeAnswerButton.addEventListener("click", function () {
+    motorbike.engineStarted();
+})
+
+let motorbike = {
+    color: "red",
+    gear: 1,
+    frame_material: "carbon",
+    started: false,
+    stopped: true,
+    engineStarted: function () {
+        let challengeFifteenResult = document.getElementById("challengeFifteenResult");
+
+        if (this.started === false && this.stopped === true) {
+            console.log("ON");
+            challengeFifteenResult.innerHTML = `<p>The motor bike is ON</p>`
+
+            this.started = true;
+            this.stopped = false;
+        } else {
+            console.log("OFF");
+            challengeFifteenResult.innerHTML = `<p>The motor bike is OFF</p>`
+
+            this.started = false;
+            this.stopped = true;
+        }
+    }
+}
+
+
+
 
 
 
