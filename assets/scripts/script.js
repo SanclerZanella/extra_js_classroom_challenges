@@ -423,6 +423,64 @@ let motorbike = {
     }
 }
 
+///Challenge 16 vehicle function
+//Create a constructor function for a vehicle.
+//Give it vehicle attributes, so that you can 
+//create a new vehicle of any class
+
+let BMW = new vehicle("sportive", 4, "red", "diesel");
+let challengeSixteenResult = document.getElementById("challengeSixteenResult");
+let BMWAnswer = document.getElementById("BMWAnswer");
+let engineAnswer = document.getElementById("engineAnswer");
+let honkBMWAnswer = document.getElementById("honkBMWAnswer");
+
+
+BMWAnswer.addEventListener("click", function() {
+    let BMWCar = JSON.stringify(BMW, null, 2);
+    console.log(`BMW characteristics: ${BMWCar}`);
+    challengeSixteenResult.innerHTML += `BMW characteristics: ${BMWCar}`;
+});
+
+engineAnswer.addEventListener("click", function() {
+    BMW.toggleEngine();
+});
+
+honkBMWAnswer.addEventListener("click", function() {
+    BMW.soundHorn();
+});
+
+function vehicle(type, num, colorVeh, fuel) {
+    this.vehclass = type;
+    this.numwheels = num;
+    this.color = colorVeh;
+    this.fuelType = fuel;
+    this.engineStarted = false;
+    this.toggleEngine = function() {
+        if(!this.engineStarted) {
+            this.engineStarted = true;
+            console.log("Engine Started");
+            challengeSixteenResult.innerHTML += `<p>Engine Started</p>`;
+        } else {
+            this.engineStarted = false;
+            console.log("Engine Stopped");
+            challengeSixteenResult.innerHTML += `<p>Engine Stopped</p>`;
+        }
+    };
+    this.soundHorn = function() {
+        console.log("BIIIIIBIBIBI!");
+        challengeSixteenResult.innerHTML += `<p>BIIIIIBIBIBI!</p>`;
+    };
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
