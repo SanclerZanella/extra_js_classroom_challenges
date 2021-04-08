@@ -472,6 +472,29 @@ function vehicle(type, num, colorVeh, fuel) {
     };
 }
 
+///Challenge 17 vehicle function
+//If the user answers OK then the light will be on. 
+//If they answer Cancel, the light will stay off.
+let switchButton = document.getElementById("switchAnswer");
+
+switchButton.addEventListener("click", function() {
+    switch_bulb();
+})
+
+function switch_bulb() {
+    let bulb = document.getElementsByTagName("img")[0];
+    let bulb_status = switchButton.getAttribute("value");
+    
+    if(bulb_status === "Light off") {
+        bulb.setAttribute("src", "assets/images/bulb_off.gif");
+        switchButton.setAttribute("value", "Light on");
+     } else {
+        bulb.setAttribute("src", "assets/images/bulb_on.gif");
+        switchButton.setAttribute("value", "Light off");
+    }
+}
+
+
 
 
 
